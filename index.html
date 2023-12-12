@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Marketplace</title>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="nav-item" onclick="toggleAdd()">Aggiungi</div>
+        <div class="nav-item nav-item-login-logout" onclick="toggleLoginLogout()">Login</div>
+        <div class="nav-item" id="username-btn" onclick="toggleLoginLogout()">Username</div>
+        <div class="login-container" id="login-container">
+            <!-- Display username or login form based on user authentication -->
+            <!-- Aggiunto un form per l'inserimento dell'username -->
+            <form id="login-form" onsubmit="login(); return false;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<!-- Modal for Course Details -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="course-details-container"></div>
+    </div>
+</div>
+
+<!-- Modal for Editing Course -->
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <div id="edit-course-details-container"></div>
+    </div>
+</div>
+
+<div class="container" id="course-list-container">
+    <!-- Course listing will be dynamically added here -->
+</div>
+
+<footer>
+    <p>&copy; 2023 Your Marketplace. All rights reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
